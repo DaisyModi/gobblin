@@ -204,7 +204,7 @@ public abstract class HighLevelConsumer<K,V> extends AbstractIdleService {
     this.messagesRead = this.metricContext.counter(prefix +
         RuntimeMetrics.GOBBLIN_KAFKA_HIGH_LEVEL_CONSUMER_MESSAGES_READ);
     this.consumerLoopExceptions = this.metricContext.meter(prefix +
-        RuntimeMetrics.GOBBLIN_KAFKA_HIGH_LEVEL_CONSUMER_LOOP_EXCEPTIONS);
+        RuntimeMetrics.GOBBLIN_KAFKA_HIGH_LEVEL_CONSUMER_UNCAUGHT_LOOP_EXCEPTIONS);
     this.queueSizeGauges = new ContextAwareGauge[numThreads];
     for (int i = 0; i < numThreads; i++) {
       // An 'effectively' final variable is needed inside the lambda expression below
